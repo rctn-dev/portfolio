@@ -1,0 +1,107 @@
+
+@media (max-width:940px){
+    header{
+        background-color: transparent;
+        backdrop-filter: none;
+        .navbar{
+            box-shadow:none;
+            backdrop-filter: none;
+            .navbar-links{
+                display:none;
+            }
+            .burger-btn{
+                display:block;
+            }
+            .dark-light{
+                box-shadow:0 0 2px 1px rgba(var(--text-color),0.5);
+            }
+        }
+        .dropdown-menu{
+            display:block;
+        }
+    }
+    main{
+        .home{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4,1fr);
+            .slider{
+                padding-bottom:6rem;
+            }
+        }
+
+        .portfolio{
+            .projects{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        .contact{
+            flex-direction: column;
+            column-gap:3rem;
+            padding-bottom:6rem;
+            padding-top:15vh;
+            .contact-list{
+                grid-template-columns: repeat(2,1fr);
+
+            }
+        }
+    }
+}
+
+@media (max-width:600px){
+
+    header{
+        .navbar{
+            justify-content:space-between;
+            .logo{
+                display:none;
+            }
+        }
+        .dropdown-menu{
+            left:2rem;
+            width:unset;
+        }
+    }
+    main{
+        .home{
+            .slider{
+                padding-bottom:6rem;
+            }
+        }
+        .portfolio{
+            .projects{
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact{
+            .contact-info{
+                .contact-list{
+                    grid-template-columns: 1fr;
+                }
+            }
+ 
+        }
+    }
+
+}
+
+@media (max-width:425px){
+
+    main{
+        .about{
+            padding-bottom:6rem;
+        }
+        .portfolio{
+            padding-bottom:6rem;
+        }
+    }
+    footer{
+        flex-direction:column;
+        padding-bottom:2rem;
+        height:80px;
+        gap:0.2rem;
+    }
+    
+}
+
+
+

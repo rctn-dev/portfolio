@@ -1,0 +1,53 @@
+header{
+    .dropdown-menu{
+        //border:2px solid red;
+        //display:none;
+        position:absolute;
+        top:60px;
+        right:2rem;
+        width: 300px;
+        height:0;
+        // overhidden works with height=0;
+        overflow:hidden;
+        background-color: rgba(var(--bg-color),0.4);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        z-index:1;
+        @include transition-eio;
+        li{
+            padding:1rem;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            transform:translateX(100%);
+            overflow:hidden;
+            @include transition-eio;
+            &.active>a{
+                color:$secondary-color;
+            }
+            a{
+                @include transition-eio;
+                font-size: 1.5rem;
+                text-transform:uppercase;
+                color:rgba(var(--text-color),1);
+                &:hover{
+                    color:$secondary-color;
+                }
+            }
+            &.open{
+                transform:translateX(0%);
+                 
+
+            }
+            @for $i from 1 through 4{
+                &:nth-child(#{$i}){
+                    transition-delay: $i*0.1s+0.2s;
+                }
+            } 
+        }
+        &.open{
+            height:260px;
+            box-shadow:0 0 2px 1px rgba(var(--text-color),0.5);
+        }
+    }
+}
